@@ -14,13 +14,12 @@ export function renderPaymentSummary() {
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
     shippingPriceCents += deliveryOption.priceCents;
   });
-}
 
-const totalBeforeTaxCents = productPriceCents + shippingPriceCents;
-const taxCents = totalBeforeTaxCents * 0.1;
-const totalCents = totalBeforeTaxCents + taxCents;
+  const totalBeforeTaxCents = productPriceCents + shippingPriceCents;
+  const taxCents = totalBeforeTaxCents * 0.1;
+  const totalCents = totalBeforeTaxCents + taxCents;
 
-const paymentSummaryHTML = `
+  const paymentSummaryHTML = `
 <div class="payment-summary-title">Order Summary</div>
 
           <div class="payment-summary-row">
@@ -62,4 +61,5 @@ const paymentSummaryHTML = `
             Place your order
           </button>`;
 
-document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
+  document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
+}
